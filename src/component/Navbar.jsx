@@ -5,13 +5,22 @@ import Logout from './Logout';
 import './style/navbar.css'
 const Navbar = () => {
     const selector = useSelector((state)=>state)
-        
-   const employeeInfo = JSON.parse(localStorage.getItem("token"))
+        const [employeeInfo,setemployeeInfo]= useState()
+
+   useEffect(()=>{
+
+   
+   setemployeeInfo(      
+        JSON.parse(localStorage.getItem("token"))
+    )
+
+
+   },[])
     return (
         <div className='nav-bar'>
         
-            {!employeeInfo?""
-            :
+            {employeeInfo?
+            
 <div style={{display:'flex'}}>
     <h1>A d a l l a</h1>
             <h1>{employeeInfo.body.name}</h1>
@@ -19,7 +28,7 @@ const Navbar = () => {
             <Logout/>
             
             
-            </div>   
+            </div>   : <h1>no internet</h1>
             
             
             

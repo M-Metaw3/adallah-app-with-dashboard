@@ -13,7 +13,10 @@ import Logout from './component/Logout'
 import Login from './component/Login'
 import Error from "./component/Erorr";
 import EmployeDetails from "./component/EmployeDetails";
+import postaction from './action/postaction';
+import LawerDetail from "./component/LawerDetail";
 
+import Addlocations from "./component/Addlocations";
 
 
 
@@ -21,8 +24,11 @@ import EmployeDetails from "./component/EmployeDetails";
 const App = () => {
 
   const dispatch =useDispatch()
-  // const [token, settoken] = useState("");
   
+  useEffect(() => {
+    console.log("getEmpDetails");
+    dispatch( postaction.getAllemp())
+}, [dispatch]);
 
 
 // useEffect(async()=>{
@@ -47,36 +53,13 @@ const App = () => {
 
 
 
-// useEffect(()=>{
-
-//   dispatch({
-// type:'m',
-  
-//   payload: JSON.parse(localStorage.getItem("token"))
-
-//   })
-// },[dispatch])
 
 
-//   useEffect(()=>{
-//     dispatch(posts.getallposts())
 
-//     // await fetch('http://localhost:8000/post',{
-//     //   method:'get'
-//     // }).then((el)=>{console.log(el)})
-
-//   },[dispatch])
-
-// const a = true
 
 const users = JSON.parse(localStorage.getItem("token"))
-useEffect(()=>{
-  JSON.parse(localStorage.getItem("token"))
 
-
-},[])
 const selector = useSelector((state)=>state)
-// console.log(selector.admin)
 
   return (
 
@@ -87,20 +70,18 @@ const selector = useSelector((state)=>state)
       <Routes>
        {users? <Route path="/Home" element={<Home />} >
 
-     
+       <Route path="/Home" element={<Registration />} />
        <Route path="/Home/registration" element={<Registration />} />
+       <Route path="/Home/lowyerDetails" element={<LawerDetail />} />
        <Route path="/Home/erorr" element={<Error />} />
        <Route path="/Home/EmployeDetails" element={< EmployeDetails/>} />
+       <Route path="/Home/addlocation" element={< Addlocations/>} />
 
-
-        
        </Route> :<Route path="/Home" element={<Login />} />}
 
-    <Route path="/" element={<Login />} />
     
- {/*  {!users?  <Route path="/registration" element={<Registration />} /> :<Route path="/registration" element={<Logout/>} />  } */}
 
- {!users?  <Route path="/" element={<Login />} /> :<Route path="/" element={<Logout/>} />  }
+ {!users?  <Route path="/" element={<Login />} /> :<Route path="/" element={<Home/>} />  }
 
       
       </Routes>
