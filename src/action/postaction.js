@@ -65,11 +65,10 @@ const registeremp =  (body)=> async(dispatch) => {
   const getAllemp =()=>async(dispatch) => {
 
 try {
-  console.log("meta")
  await api.getemp().then((el)=>el.json().then((el)=>dispatch({type:"allEmp",payload:el})))
   
 } catch (error) {
-  
+  console.log(error.message)
 }
 
     

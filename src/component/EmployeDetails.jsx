@@ -12,7 +12,6 @@ const [updateEmp,setupdateEmp] = useState({image:'',name:'',position:'',email:''
 const dispatch = useDispatch()
 ////////////////////////////////////////////////////
 useEffect(() => {
-    console.log("getEmpDetails");
     dispatch( postaction.getAllemp())
 }, [dispatch]);
 
@@ -62,7 +61,6 @@ const handelerCancel = () => {
 
 
     const allemp = useSelector((state)=>state)
-
     //////////////////////////////////////////////////////////////////
     return (
         <div>
