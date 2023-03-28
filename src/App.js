@@ -15,8 +15,16 @@ import Error from "./component/Erorr";
 import EmployeDetails from "./component/EmployeDetails";
 import postaction from './action/postaction';
 import LawerDetail from "./component/LawerDetail";
-
+import Clocks from './component/Clocks'
 import Addlocations from "./component/Addlocations";
+import AllLawyerDetails from './component/lawyercomponent/AllLawyerDetails'
+import LawyerPending from './component/lawyercomponent/LawyerPending'
+import Lawyerdeleting from './component/lawyercomponent/Lawyerdeleting'
+import AddAdvertising from './component/AddAdvertising'
+import Library from "./component/Library";
+
+
+
 
 
 
@@ -61,21 +69,37 @@ const users = JSON.parse(localStorage.getItem("token"))
 
 const selector = useSelector((state)=>state)
 
-  return (
-
-    <div >
-    <BrowserRouter>
+return (
+  
+  <div >
+    <BrowserRouter >
  
- {users?   <Navbar/> : ''    }
+      {users?   <Navbar/> : ''    }
       <Routes>
        {users? <Route path="/Home" element={<Home />} >
 
        <Route path="/Home" element={<Registration />} />
+       <Route path="/Home/Library" element={<Library />} />
+
        <Route path="/Home/registration" element={<Registration />} />
-       <Route path="/Home/lowyerDetails" element={<LawerDetail />} />
+       <Route path="/Home/AddAdvertising" element={<AddAdvertising />} />
+
+       <Route path="/Home/lowyerDetails" element={<LawerDetail />} >
+       <Route path="/Home/lowyerDetails/AllLawyerDetails" element={<AllLawyerDetails />} />
+       <Route path="/Home/lowyerDetails/lawyerpending" element={<LawyerPending />} />
+       <Route path="/Home/lowyerDetails/Lawyerdeleting" element={<Lawyerdeleting />} />
+
+
+
+
+
+
+       </Route>
        <Route path="/Home/erorr" element={<Error />} />
        <Route path="/Home/EmployeDetails" element={< EmployeDetails/>} />
        <Route path="/Home/addlocation" element={< Addlocations/>} />
+       <Route path="/Home/clocks" element={< Clocks/>} />
+
 
        </Route> :<Route path="/Home" element={<Login />} />}
 

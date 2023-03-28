@@ -14,20 +14,32 @@ const Navbar = () => {
         JSON.parse(localStorage.getItem("token"))
     )
 
-
    },[])
+
+//    const clock = new Date()
+
+
     return (
         <div className='nav-bar'>
-        
+        {/* <p>{clock.getHours()}:{clock.getMinutes()}:{clock.getSeconds()}</p> */}
+
+
             {employeeInfo?
             
 <div style={{display:'flex'}}>
-    <h1>A d a l l a</h1>
-            <h1>{employeeInfo.body.name}</h1>
+    <div>
+    <h1>Adalla</h1>
+    </div>
+            <div>
             <img src={employeeInfo.body.image} alt=""  width={50}/>
+            </div>
+            <p>{employeeInfo.body.name}</p>
+
+            
+            <div>
             <Logout/>
             
-            
+            </div>
             </div>   : <h1>no internet</h1>
             
             

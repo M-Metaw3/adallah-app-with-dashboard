@@ -7,6 +7,8 @@ import axois from "axios"
  const updateEmployee = 'http://localhost:5000/admin/update'
 const deleteEmp = 'http://localhost:5000/admin/delete'
 const addPlacesApi ='http://localhost:5000/locations'
+const clock ='http://localhost:5000/admin/addworkhours'
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -129,7 +131,7 @@ return  await fetch(
     method: "post",
     headers: {
       "Content-Type": " application/json",
-      Authorization: `Bearer ${token.token}`, 
+      // Authorization: `Bearer ${token.token}`, 
     },
     body:JSON.stringify(body),
   }
@@ -140,3 +142,49 @@ console.log(error)
 }
 
 }
+
+export const addworkhours = async (body) => {
+
+try {
+
+return  await fetch(
+  clock,
+
+  {
+    method: "post",
+    headers: {
+      "Content-Type": " application/json",
+      // Authorization: `Bearer ${token.token}`, 
+    },
+    body:JSON.stringify(body),
+  }
+);
+
+} catch (error) {
+console.log(error)
+}
+
+}
+
+export const getallworkhour = async () => {
+
+  try {
+  
+  return  await fetch(
+    clock,
+  
+    {
+      method: "get",
+      headers: {
+        "Content-Type": " application/json",
+        // Authorization: `Bearer ${token.token}`, 
+      },
+      // body:JSON.stringify(body),
+    }
+  );
+  
+  } catch (error) {
+  console.log(error)
+  }
+  
+  }

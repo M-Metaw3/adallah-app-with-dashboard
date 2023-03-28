@@ -1,14 +1,32 @@
 a{
     text-decoration: none;
-    margin: 10px;
+  color: #020d29;
     color: black;
+    margin: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 80%;
+
+}
+a:hover{
+    background-color: #fdeee7;
+    border-radius: 5px;
+    border-right: 5px solid #f36118;
+    transition: 0.2s;
+}
+a:active{
+    background-color: #f36118;
+    color: aqua;
 }
 .Home{
     font-size: 20px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     width: 20%;
     color: aliceblue;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #fefefe;
 }
 .nested_component{
     width: 70%;
@@ -19,6 +37,8 @@ a{
 }
 
 .container{
-
+border:1px solid red;
     display: flex;
+    background-color: #f5f5fb;
+
 }

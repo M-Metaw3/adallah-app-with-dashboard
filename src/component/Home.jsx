@@ -22,14 +22,16 @@ useEffect(() => {
         <div className='container'>
         <div className='Home'>
 
-<Link >deleted account</Link>
+<Link  >deleted account</Link>
 <Link to="/Home/registration">Add employee Email</Link>
 <Link to='/Home/erorr'>users analsis</Link>
-<Link href="">add advirtise</Link>
+<Link to='/Home/AddAdvertising'>add advirtise</Link>
 <Link to="/Home/lowyerDetails">lawyer details</Link>
+<Link to="/Home/Library">Library</Link>
+
 <Link href="">citiziens details</Link>
 <Link to="/Home/EmployeDetails">EmployeDetails</Link>
-
+<Link to="/Home/clocks">clocks</Link>
 <Link to='/Home/addlocation'>add locations</Link>
 
 

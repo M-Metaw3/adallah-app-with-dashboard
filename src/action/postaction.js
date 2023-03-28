@@ -7,7 +7,18 @@ const loginAction = (body)=>async(dispatch)=>{
 
 console.log(body)
 await api.Loggin(body).then((element)=>element.json().then((data)=>{
-  dispatch({type:'loggin',payload:data})
+  const {body} = data
+  const {message} = data
+
+  console.log(body)
+  if(body){
+
+    dispatch({type:'loggin',payload:data})
+  }
+  else{
+    console.log(message   )
+  }
+  
 })).catch((er)=>console.log(er))
 
 }
@@ -111,9 +122,29 @@ try {
     }
 
 
+const addworkHours = async (body) => {
+
+  try {
+  await api.addworkhours(body).then((el)=>el.json().then((ell)=>console.log(ell)))
+
+  } catch (error) {
+    console.log(error)
+  }
+  
+}
+
+
+const getworkHours = ()=> async (dispatch) => {
+
+  try {
+ await api.getallworkhour().then((el)=>{el.json().then((ell)=>{dispatch({type:"allworks", payload:ell})})})
+
+  } catch (error) {
+    console.log(error)
+  }
+  
+}
 
 
 
-
-
-export default {registeremp,loginAction,logOut,getAllemp,apdateemploye,deleteemploye,locationAction}
+export default {registeremp,loginAction,logOut,getAllemp,apdateemploye,deleteemploye,locationAction,addworkHours,getworkHours}
