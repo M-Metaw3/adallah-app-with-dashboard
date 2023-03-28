@@ -4,11 +4,11 @@ import { useEffect,useState  } from "react";
 
 const AddAdvertising = () => {
 const [registration, setregistration] = useState({image:'',text:''});
-const handelerAdvrtiser=(e)=>{
+// const handelerAdvrtiser=(e)=>{
 
-    let a = new FileReader()
-    console.log(a.readAsDataURL(e[0]));
-}
+//     let a = new FileReader()
+//     console.log(a.readAsDataURL(e[0]));
+// }
 
 console.log(registration.image);
     return (
