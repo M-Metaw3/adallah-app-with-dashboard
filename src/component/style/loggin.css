@@ -1,9 +1,13 @@
 .form{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     width: 50%;
-margin: auto;
-height: 50%;
+    margin: auto;
+    height: 50%;
    
+}
+h3{
+    font-family: 'Aref Ruqaa Ink', serif;
+    color: var(--orange);
 }

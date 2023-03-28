@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap');
+
+  :root {
+    --orange: rgb(243, 97, 24);
+    --dark-blue:rgb(2, 13, 41);
+
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }

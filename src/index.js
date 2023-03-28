@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import {   applyMiddleware,compose, createStore } from 'redux';
 import { createLogger } from "redux-logger";
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import './index.css'
 
 // import reducers from './reducers/index';
 import thunk from "redux-thunk"
 import App from './App';
 import post from './reducer/postreducer';
 // import registration from './reducers/registration';
-
-
 const logger = createLogger();
 
 applyMiddleware(logger)
