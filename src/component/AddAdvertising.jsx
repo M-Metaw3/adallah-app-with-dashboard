@@ -10,6 +10,8 @@ const [registration, setregistration] = useState({image:'',text:''});
 //     console.log(a.readAsDataURL(e[0]));
 // }
 
+
+
 console.log(registration.image);
     return (
         <div>
