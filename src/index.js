@@ -17,6 +17,7 @@ const logger = createLogger();
 
 applyMiddleware(logger)
 
+
 const store = createStore(post , applyMiddleware(compose(thunk)),      
 )
 // const store2 = createStore(post, applyMiddleware(compose(thunk)))

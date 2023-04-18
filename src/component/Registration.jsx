@@ -20,7 +20,7 @@ const [eror, seteror] = useState("");
 const nav = useNavigate()
 
 
-// console.log( moment(Date).fromNow());
+
 const reg =(e) => {
 
     if(registration.password!=registration.con_password)return seteror("password dosn,t matching")
@@ -28,9 +28,9 @@ const reg =(e) => {
 console.log(registration);
     dispatch(posts.registeremp(
     {
-        name:String( registration.name),
-        email: String(registration.email),
-        password: String(registration.password),
+      name:String( registration.name),
+      email: String(registration.email),
+      password: String(registration.password),
       con_password: String(registration.con_password),
       image: String(registration.image),
       position: String(registration.position)
@@ -59,7 +59,6 @@ console.log(registration);
     return (
         <>        
         <div className='mm' style={{display:"flex",flexDirection:"column",width:"50%",color:'red'}}>
-            
   <label  htmlFor="name">name</label>
        <input value={registration.name}  onChange={(e)=>setregistration({...registration,name:e.target.value})} type="text" placeholder='name'  />
        <label htmlFor="email">email</label>
@@ -77,7 +76,6 @@ console.log(registration);
 type="file"
 onDone={({base64})=>setregistration({...registration,image:base64})}
 value={registration.image} 
-
 />
      
 <div className="select_cat">

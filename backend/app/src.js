@@ -22,12 +22,13 @@ app.use('/adala/consultation',consultationRoutes)
 app.use('/admin',admin)
 const aa = new Date()
 app.use(express.static('front/build'))
-// app.get('/', async(req,res) => {
+app.get('/', async(req,res) => {
 //   await res.sendFile(path.resolve('front/build/index.html'))
 //   console.log( "aa.getHours()")
 //   console.log( "aa.setHours(100)")
+console.log("done server running")
 
   
-// })
+})
 
 module.exports=app
