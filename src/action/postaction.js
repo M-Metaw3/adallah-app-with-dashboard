@@ -145,5 +145,16 @@ const getworkHours = ()=> async (dispatch) => {
 }
 
 
+//////////// Lawyers ///////////////////////
+const getAllLawyers =()=>async(dispatch) => {
+  try {
+   await api.getAllLawyers().then((el)=>{console.log(el,"eLLLLLLLLLLL")})
+    
+  } catch (error) {
+    console.log(error.message,"rrrrrrrrrrrrrr")
+  }
+  
+    }
 
-export default {registeremp,loginAction,logOut,getAllemp,apdateemploye,deleteemploye,locationAction,addworkHours,getworkHours}
+
+export default {registeremp,loginAction,logOut,getAllemp,apdateemploye,deleteemploye,locationAction,addworkHours,getworkHours,getAllLawyers}

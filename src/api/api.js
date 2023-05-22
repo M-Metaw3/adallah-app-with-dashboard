@@ -3,6 +3,7 @@ import axois from "axios"
  const url = 'http://localhost:8000/post'
  const adminSingnIn ='http://localhost:5000/admin'
  const getemployee = 'http://localhost:5000/admin'
+ const getalllaweyers = 'http://localhost:5000/adala/lawyer'
  const logginEmployee = "http://localhost:5000/admin/loggin"
  const updateEmployee = 'http://localhost:5000/admin/update'
 const deleteEmp = 'http://localhost:5000/admin/delete'
@@ -18,13 +19,10 @@ const token = JSON.parse(localStorage.getItem("token"))
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
 export const regapi= async (body) => {
   try {
     return  await fetch(
       adminSingnIn,
-    
       {
         method: "post",
         headers: {
@@ -40,8 +38,6 @@ export const regapi= async (body) => {
     
     
   }
-
-
 
   
 }
@@ -78,10 +74,8 @@ export const Loggin= async (body) => {
           "Content-Type": " application/json",
           Authorization: `Bearer ${token.token}`,
         },
-
       })
-    } catch (error) {
-      
+    } catch (error) {   
     }}
 //////////////////////////////////////////////////////////////////////////////////////
 export const updateEmp = async(id,body)=>{
@@ -188,3 +182,18 @@ export const getallworkhour = async () => {
   }
   
   }
+
+//////////// Lawyers ///////////////////////
+export const getAllLawyers = async()=>{
+    try {  
+      return await fetch(getalllaweyers,{
+        method:"get",
+        // headers: {
+        //   "Content-Type": " application/json",
+        //   Authorization: `Bearer ${token.token}`,
+        // },
+
+      })
+    } catch (error) {
+      
+    }}

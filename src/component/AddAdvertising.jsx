@@ -1,6 +1,7 @@
 import React from 'react';
 import FileBase from "react-file-base64"
 import { useEffect,useState  } from "react";
+import SearchSection from './Search-Section/SearchSection';
 
 const AddAdvertising = () => {
 const [registration, setregistration] = useState({image:'',text:''});
@@ -12,8 +13,9 @@ const [registration, setregistration] = useState({image:'',text:''});
 
 console.log(registration.image);
     return (
-        <div>
-            
+        <>
+            <SearchSection title={"Advertisements"} setSearchValue={""}/>
+   
             <div >
 
                 <img width={300} src={registration.image} alt="" />
@@ -29,7 +31,7 @@ value={registration.image}
 />
 <input type="text"onChange={ (e)=>setregistration({...registration,text:e.target.value})} name="" id="" />
 
-        </div>
+        </>
     );
 }
 

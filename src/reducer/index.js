@@ -1,11 +1,9 @@
-// import { combineReducers } from "redux";
-// import {  applyMiddleware } from "redux";
-// import { createLogger } from "redux-logger";
+import { combineReducers } from "redux";
 
-// import postreducer from "./postreducer.js";
-// import registration from "./registration.js";
+import postreducer from "./postreducer";
+import LawyerReducer from "./LawyerReducer";
 
-//   const reducers =combineReducers({postreducer,registration})
+  const reducers =combineReducers({post:postreducer,Lawyer:LawyerReducer})
 
 
-// export default reducers
+export default reducers

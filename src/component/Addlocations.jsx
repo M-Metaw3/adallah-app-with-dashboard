@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect,useState  } from "react";
 import { useDispatch ,useSelector } from 'react-redux';
 import dashboard from '../action/postaction'
+import SearchSection from './Search-Section/SearchSection';
 const Addlocations = () => {
 
     
@@ -20,12 +21,11 @@ const submitHandeler =async () => {
   
 }
  
-
-
-
-
     return (
-        <div style={{width:"100%",height:"100vh",margin:"15px"}}>
+       <>
+           <SearchSection title={"Locations"} setSearchValue={""}/>
+        <div className=''>
+     
           <form action="" style={{display:"flex" ,flexDirection:"column", border:"1px solid red" ,width:"100%",padding:"20px"}}>
             <label htmlFor="name">name</label>
             <input value={places.name} onChange={(e)=>setPlaces({...places,name:e.target.value})} id='name' type="text" name='name'/>
@@ -36,9 +36,6 @@ const submitHandeler =async () => {
             <label htmlFor="lat">lat</label>
 
             <input value={places.lat} onChange={(e)=>setPlaces({...places,lat:e.target.value})} id='lat' name='lat' type="text" />
-
-            
-        
 
             <div className="select_cat">
                             <label htmlFor="position"> الاقسام:</label>
@@ -52,13 +49,12 @@ const submitHandeler =async () => {
                                 <option value="سجلات تجارية">سجلات تجارية</option>
                                 <option value="هيئات استثمار">هيئات استثمار</option>
                                 <option value="مأموريات ضرائب">مأموريات ضرائب   </option>
-
-
                             </select>
                         </div>
           </form>
           <button onClick={submitHandeler}> Add Court</button>
         </div>
+       </>
     );
 }
 

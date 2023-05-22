@@ -60,7 +60,7 @@ class Lawyer {
 
     static getalllaweyers = async (req, res) => {
 
-
+console.log("get")
     try {
         const allUser = await userModel.find().populate('userDetails').populate("userData")
 

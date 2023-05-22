@@ -12,7 +12,7 @@ const dispatch = useDispatch()
     }
     return (
         <div>
-        <h1 onClick={hadelerlogout}>Logout</h1>
+        <h6 className=' my-3 pointer' onClick={hadelerlogout}><i className="fa-solid fa-arrow-right-from-bracket"></i></h6>
         </div>
     );
 }

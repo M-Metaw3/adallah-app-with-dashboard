@@ -1,0 +1,15 @@
+
+.select_cat button{
+    margin: 10px;
+}
+.employe-details .btn{
+    border: none;
+    color: rgba(var(--dark-blue-rgb),80%);
+}
+
+
+.employe-details a:hover ,.employe-details a.active {
+    background-color: rgba(var(--orange-rgb),25%);
+    color: rgb(var(--dark-blue-rgb));
+
+}

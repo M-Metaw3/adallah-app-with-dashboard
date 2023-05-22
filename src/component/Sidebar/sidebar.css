@@ -1,0 +1,12 @@
+.sidebar a{
+    text-decoration: none;
+    color: rgba(var(--dark-blue-rgb),80%); 
+}
+.sidebar a:hover ,.sidebar a.active{
+    background-color: rgba(var(--orange-rgb),25%);
+    color: rgb(var(--dark-blue-rgb));
+}
+
+.sidebar{
+    background-color: white;
+}

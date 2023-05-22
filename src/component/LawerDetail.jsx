@@ -1,24 +1,36 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
+import SearchSection from './Search-Section/SearchSection';
 
 const LawerDetail = () => {
+
+
     return (
-        <div>
-        <div>
-<Link to="/Home/lowyerDetails/Lawyerdeleting">lawyer delete</Link>
-<Link to="/Home/lowyerDetails/lawyerpending">lawyerpending</Link>
-<Link to="/Home/lowyerDetails">lawyer susbended</Link>
-<Link to="/Home/lowyerDetails/AllLawyerDetails">All lawyer </Link>
-<Link to="/Home/lowyerDetails/lawyerpremium">lawyerpremium</Link>
-<Link to="/Home/lowyerDetails">lawyer best consulting</Link>
-    
-        </div>
+        <>
+        <SearchSection title={"Lawyer Details"} setSearchValue={""}/>
+        <div className='p-4 employe-details'>
+        <NavLink to="/Home/lowyerDetails/AllLawyerDetails" className={`btn px-4 me-2`}>All
+        </NavLink>
+        <NavLink to="/Home/lowyerDetails/lawyerpremium" className={`btn px-4 me-2`}>Premium
+        </NavLink>
+        <NavLink to="/Home/lowyerDetails/lawyerpending" className={`btn px-4 me-2`}>pending
+        </NavLink>
+        <NavLink to="/Home/lowyerDetails/" className={`btn px-4 me-2`}>Susbended
+        </NavLink>
+        <NavLink to="/Home/lowyerDetails/Lawyerdeleting" className={`btn px-4 me-2`}>Deleted
+        </NavLink>
+
+        <NavLink to="/Home/lowyerDetails/"className={`btn px-4 me-2`}>High Related
+        </NavLink>
+        <NavLink to="/Home/lowyerDetails/" className={`btn px-4 me-2`}>High Reactive
+        </NavLink>
+        </div>    
         <div>
 
         <Outlet/>
 
         </div>
-        </div>
+        </>
     );
 }
 

@@ -1,9 +1,0 @@
-.select_cat{
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column;
-    margin: 25px;
-}
-.select_cat button{
-    margin: 10px;
-}
