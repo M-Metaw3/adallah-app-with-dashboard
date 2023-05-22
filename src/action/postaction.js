@@ -148,7 +148,7 @@ const getworkHours = ()=> async (dispatch) => {
 //////////// Lawyers ///////////////////////
 const getAllLawyers =()=>async(dispatch) => {
   try {
-   await api.getAllLawyers().then((el)=>console.log(el,"eLLLLLLLLLLL"))
+   await api.getAllLawyers().then((el)=>el.json().then((data)=>console.log(data)))
     
   } catch (error) {
     console.log(error.message,"rrrrrrrrrrrrrr")

@@ -1,14 +1,16 @@
 
 import axois from "axios"
- const url = 'http://localhost:8000/post'
- const adminSingnIn ='http://localhost:5000/admin'
- const getemployee = 'http://localhost:5000/admin'
- const getalllaweyers = 'http://localhost:5000/adala/lawyer'
- const logginEmployee = "http://localhost:5000/admin/loggin"
- const updateEmployee = 'http://localhost:5000/admin/update'
-const deleteEmp = 'http://localhost:5000/admin/delete'
-const addPlacesApi ='http://localhost:5000/locations'
+const url = 'http://localhost:10000/post'
+const adminSingnIn ='http://localhost:10000/admin'
+const getemployee = 'http://localhost:10000/admin'
+const getalllaweyers = 'http://localhost:10000/adala/lawyer'
+const logginEmployee = "http://localhost:10000/admin/loggin"
+const updateEmployee = 'http://localhost:10000/admin/update'
+const deleteEmp = 'http://localhost:10000/admin/delete'
+const addPlacesApi ='http://localhost:10000/locations'
 const clock ='http://localhost:5000/admin/addworkhours'
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////
