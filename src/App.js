@@ -4,7 +4,20 @@ import { useDispatch ,useSelector } from 'react-redux';
 import posts from "./action/postaction"
 import { useEffect  } from "react";
 // import axios from "react";
+<<<<<<< HEAD
 
+=======
+import { useNavigate } from 'react-router-dom';
+
+import ReactDOM from "react-dom/client";
+import Registration from './component/Registration'
+import Navbar from "./component/Navbar";
+import Home from './component/Home'
+import Logout from './component/Logout'
+import Login from './component/Login'
+import Error from "./component/Erorr";
+import EmployeDetails from "./component/EmployeDetails";
+>>>>>>> d437082 (aaaaaaaaaaaaa)
 import postaction from './action/postaction';
 import Routing from "./Routing/Routing";
 
