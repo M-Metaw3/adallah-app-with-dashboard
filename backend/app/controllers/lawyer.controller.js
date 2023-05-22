@@ -63,15 +63,12 @@ class Lawyer {
 console.log("get")
     try {
         const allUser = await userModel.find().populate('userDetails').populate("userData")
-
         const lawyerFromUser= allUser.filter((el)=>el.userType=="lawyers")
         console.log(lawyerFromUser)
         res.status(200).json({
             message:" all lawyers ",
             data:lawyerFromUser
         })
-
-
 
         } catch (error) {
             res.status(400).json(error)

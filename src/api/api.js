@@ -192,7 +192,6 @@ export const getAllLawyers = async()=>{
         //   "Content-Type": " application/json",
         //   Authorization: `Bearer ${token.token}`,
         // },
-
       })
     } catch (error) {
       
