@@ -3,12 +3,14 @@ import axois from "axios"
 const url = 'http://localhost:10000/post'
 const adminSingnIn ='http://localhost:10000/admin'
 const getemployee = 'http://localhost:10000/admin'
-const getalllaweyers = 'http://localhost:10000/adala/lawyer'
 const logginEmployee = "http://localhost:10000/admin/loggin"
 const updateEmployee = 'http://localhost:10000/admin/update'
 const deleteEmp = 'http://localhost:10000/admin/delete'
+const susbendEmp = 'http://localhost:10000/admin/suspened'
+const deleteUser = 'http://localhost:10000/adala/user'
 const addPlacesApi ='http://localhost:10000/locations'
 const clock ='http://localhost:5000/admin/addworkhours'
+const getalllaweyers = 'http://localhost:10000/adala/lawyer'
 
 
 
@@ -37,8 +39,6 @@ export const regapi= async (body) => {
     
   } catch (error) {
 
-    
-    
   }
 
   
@@ -100,11 +100,27 @@ export const updateEmp = async(id,body)=>{
 
 ///////////////////////////////////////////////////////////////
 export const deletedEmp = async(id)=>{
-
   try {
+    console.log(id)
     
     return await fetch(deleteEmp+'/'+id,{
       method:"DELETE",
+      headers: {
+        "Content-Type": " application/json",
+        // Authorization: `Bearer ${token.token}`,
+      },
+      // body:JSON.stringify(body)
+
+    })
+  } catch (error) {
+    
+  }
+}
+export const susbendedEmp = async(id)=>{
+  try {
+    console.log(id)
+    return await fetch(susbendEmp+'/'+id,{
+      method:"PATCH",
       headers: {
         "Content-Type": " application/json",
         // Authorization: `Bearer ${token.token}`,
@@ -198,3 +214,19 @@ export const getAllLawyers = async()=>{
     } catch (error) {
       
     }}
+
+    export const deleteLawyer = async(id)=>{
+      try {
+        return await fetch(deleteUser+'/'+id,{
+          method:"DELETE",
+          headers: {
+            "Content-Type": " application/json",
+            // Authorization: `Bearer ${token.token}`,
+          },
+          // body:JSON.stringify(body)
+    
+        })
+      } catch (error) {
+        
+      }
+    }

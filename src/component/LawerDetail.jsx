@@ -9,7 +9,7 @@ const LawerDetail = () => {
         <>
         <SearchSection title={"Lawyer Details"} setSearchValue={""}/>
         <div className='p-4 employe-details'>
-        <NavLink to="/Home/lowyerDetails/AllLawyerDetails" className={`btn px-4 me-2`}>All
+        <NavLink  to="/Home/lowyerDetails/AllLawyerDetails" className={`btn px-4 me-2`}>All
         </NavLink>
         <NavLink to="/Home/lowyerDetails/lawyerpremium" className={`btn px-4 me-2`}>Premium
         </NavLink>
@@ -26,9 +26,7 @@ const LawerDetail = () => {
         </NavLink>
         </div>    
         <div>
-
         <Outlet/>
-
         </div>
         </>
     );

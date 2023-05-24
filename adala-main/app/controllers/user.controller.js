@@ -184,7 +184,6 @@ class User {
 
     static deleteUser = async (req, res) => {
 
-
         const _id = req.params.id
         // console.log(deletedUserId)
         try {

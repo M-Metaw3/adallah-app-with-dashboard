@@ -27,4 +27,11 @@ border:1px solid red;
 }
 .content{
     background-color: var(--bg);
+    margin-left: 270px;
+}
+
+@media (max-width: 991px){
+    .content{
+        margin-left: 0;
+    }
 }

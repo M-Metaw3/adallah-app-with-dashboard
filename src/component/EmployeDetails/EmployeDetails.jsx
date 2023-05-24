@@ -9,7 +9,6 @@ const EmployeDetails = () => {
    
 
 
-const dispatch = useDispatch()
 ////////////////////////////////////////////////////
 
 
@@ -70,8 +69,7 @@ const handelerUbdatePasswords = () => {
         <NavLink to="/Home/EmployeDetails/registration" className={`btn px-4 me-2`}>Add
         </NavLink>
         </div>    
-        <div className='px-4 '>
-            <span className=''>Total : {allemp?.length}</span>
+        <div>
             <Outlet/>       
         </div>
         

@@ -26,6 +26,16 @@ export default (state = intailstate, action) => {
       );
       return { ...state, allemp: newEmpDetails };
 
+      case "SusbendEmp":
+      // const deleted =JSON.stringify( action.payload.body  )
+      // const convertdeleted = (JSON.parse( updated))
+      console.log(action.payload,"fffff");
+      // console.log("hiiiiiii"+newEmpDetails)
+      const newEmploees = state.allemp.filter(
+        (el) => el._id != action.payload
+      );
+      return { ...state, allemp: newEmploees };
+
     case "updatedEmp":
       const updated = JSON.stringify(action.payload.body);
       const convert = JSON.parse(updated);

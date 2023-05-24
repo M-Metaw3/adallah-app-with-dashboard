@@ -38,28 +38,32 @@ useEffect(() => {
             <div className='d-flex'>
                 <div className=' w-auto'>
                 
-                <div className={`${toggle ?'d-none ':' d-block  position-fixed z-3'}`}>
+                <div className={`${toggle ?'d-none ':' d-block  z-3'}`}>
                     <Sidebar/>
                 </div>
-                <div className={`${toggle ?' d-none ':' invisible'}`}>
+                {/* <div className={`${toggle ?' d-none ':' invisible'}`}>
                     <Sidebar/>
-                </div>
+                </div> */}
 
                 </div>
-                
-                <div className='col overflow-auto content'>
-                        <div className=''>
-                        <a className='d-flex justify-content-end d-lg-none' onClick={()=>SetToggle(!toggle)}>
-                        <i className="fa-solid fa-bars"></i>
-                        </a> 
+                <div className='col content'>
                         <Outlet/>
-                        </div>
                 </div>
                 <div className='w-auto'>
                 <div className='invisible'>
+                <button className='btn  d-lg-none'
+                // onClick={()=>SetToggle(!toggle)}
+                >
+                        <i className="fa-solid fa-bars"></i>
+                        </button> 
                 <Navbar/>
                 </div>
-                <div className=' border-start position-fixed top-0 end-0'>
+                <div className=' border-start position-fixed top-0 end-0 d-flex flex-column justify-content-center'>
+                <button className='btn shadow-none border-0  d-lg-none'
+                 onClick={()=>SetToggle(!toggle)}
+                 >
+                        <i className="fa-solid fa-bars"></i>
+                        </button> 
                 <Navbar/>
                 </div>
                 </div>

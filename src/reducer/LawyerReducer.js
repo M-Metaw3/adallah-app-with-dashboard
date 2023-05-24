@@ -9,6 +9,13 @@ export default (state = intailstate, action) => {
             console.log("allLawyers")
       console.log(action.payload)
      return { ...state, allLawyers: action.payload };
+     case "DeleteLawyer":
+      console.log(action.payload);
+      const newLawyers = state.allLawyers.filter(
+        (el) => el._id != action.payload
+      );
+      return { ...state, allLawyers: newLawyers };
+
      case "error":
       return state;
 

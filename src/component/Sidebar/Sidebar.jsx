@@ -4,7 +4,7 @@ import "./sidebar.css"
 function Sidebar() {
   return (
     <>
-    <div className='sidebar d-flex justify-content-between flex-column px-1 z-3  vh-100'>
+    <div id="collapseExample1" className='sidebar collapse d-flex justify-content-between flex-column px-1 z-3  vh-100'>
        <div>
             <div className='p-3'>
                 <img src={require('../../assets/images/logoo.png')} width={"100%"} alt="" />            

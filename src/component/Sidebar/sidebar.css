@@ -5,8 +5,25 @@
 .sidebar a:hover ,.sidebar a.active{
     background-color: rgba(var(--orange-rgb),25%);
     color: rgb(var(--dark-blue-rgb));
+  
 }
 
 .sidebar{
     background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    overflow: auto;
+}
+
+@media (max-width: 991px){
+    .sidebar{
+        position: fixed;
+        /* left: -250px; */
+    }
+    .sidebar.open{
+        left: 0;
+    }
+
 }

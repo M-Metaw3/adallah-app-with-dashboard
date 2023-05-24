@@ -23,18 +23,16 @@ function AllEmployees() {
     const handelerDelete = (id) => {
         dispatch(dashboard.deleteemploye(id))
     }
-    const handelerSusbened = () => {
+    const handelerSusbened = (id) => {
         console.log("handelerSusbened");
-
+        dispatch(dashboard.susbenedEmployee(id))
     }
 
     const handelerubdatedetails = (id) => {
 
 
         dispatch(postaction.apdateemploye(id, updateEmp))
-        setshowUpdate(false)
-
-            ;
+        setshowUpdate(false);
     }
     /////////////////////////////////////////////////////////////
     const handelerCancel = () => {
@@ -43,10 +41,13 @@ function AllEmployees() {
     }
     return (
         <>
-            <div>
-
-                {showUpdate ?
-                    <div className='row d-flex justify-content-center'>
+        <div className='px-4 '>
+            <span className=''>Total : {allemp?.length}</span>
+        </div>
+        
+             <div>
+             {showUpdate ?
+                    <div className='row d-flex justify-content-center mx-0'>
                         <img  src={updateEmp.image} className="mb-3 col-4"/>
                     <div className="mb-3 col-9">
                       <input className="form-control" value={updateEmp.name} onChange={(e) => setupdateEmp({ ...updateEmp, name: e.target.value })} name={updateEmp.name} type="text" />
@@ -79,12 +80,13 @@ function AllEmployees() {
                         </div>
 
                     </div> : ""}
+             </div>
 
-            </div>
+            
             {allemp ?
                 <div className='p-4'>
                     {allemp.map((el) => (
-                        <div key={el.id} className="card my-2">
+                        <div key={el.id} className="card position-static my-2">
 
                             <div className="card-body d-flex row align-items-center justify-content-center">
                                 <div className='col-12 col-lg-6  d-flex row'>
@@ -93,11 +95,11 @@ function AllEmployees() {
                                     </div>
                                     <div className='col-9'>
                                         <p>{el.name}</p>
-                                        <p className=' opacity-50'>{el.email}</p>
+                                        <p className='font-opacity-50'>{el.email}</p>
                                     </div>
                                 </div>
 
-                                <span className='col-8 col-lg-2 border-end border-start text-center'>{el.position}</span>
+                                <span className='col-8 col-lg-2 border-end border-start text-center my-2 my-lg-0'>{el.position}</span>
 
                                 <div className='col-12 col-lg-4 d-flex justify-content-evenly'>
                                     <button onClick={() => handelerUpdate(el)} className='btn border-0 fs-5' >Update</button>

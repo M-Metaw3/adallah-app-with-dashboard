@@ -93,7 +93,7 @@ value={registration.image}
         </div> */}
   
         <div className='p-5 text-center d-flex justify-content-center align-items-center'>                   
-                <form action="" className='row d-flex justify-content-center'>
+                <form action="" className='row d-flex justify-content-center mx-0'>
                     <div className="mb-3 col-9">
                       <input className="form-control" value={registration.name}  onChange={(e)=>setregistration({...registration,name:e.target.value})} type="text" placeholder='Name' />
                     </div>

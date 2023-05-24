@@ -87,7 +87,6 @@ console.log(allUser)
         })
 
 
-
         } catch (error) {
            
             res.status(400).json(error)
