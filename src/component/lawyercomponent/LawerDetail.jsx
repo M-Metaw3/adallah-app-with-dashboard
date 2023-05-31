@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import SearchSection from './Search-Section/SearchSection';
+import SearchSection from '../Search-Section/SearchSection';
 
 const LawerDetail = () => {
 
@@ -15,7 +15,7 @@ const LawerDetail = () => {
         </NavLink>
         <NavLink to="/Home/lowyerDetails/lawyerpending" className={`btn px-4 me-2`}>pending
         </NavLink>
-        <NavLink to="/Home/lowyerDetails/" className={`btn px-4 me-2`}>Susbended
+        <NavLink to="/Home/lowyerDetails/Lawyersusbended" className={`btn px-4 me-2`}>Susbended
         </NavLink>
         <NavLink to="/Home/lowyerDetails/Lawyerdeleting" className={`btn px-4 me-2`}>Deleted
         </NavLink>

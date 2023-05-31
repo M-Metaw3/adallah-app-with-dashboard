@@ -187,10 +187,10 @@ class User {
         const _id = req.params.id
         // console.log(deletedUserId)
         try {
-            const FindUser = await userModel.findById(_id)
-            console.log(FindUser)
-            const addUserDeleted = await new DeletedUsersModel(FindUser)
-            await addUserDeleted.save()
+            // const FindUser = await userModel.findById(_id)
+            // console.log(FindUser)
+            // const addUserDeleted = await new DeletedUsersModel(FindUser)
+            // await addUserDeleted.save()
             const deletetedsuccesful = await userModel.findByIdAndDelete(_id)
             res.status(201).json({ message: "user has deleted", data: deletetedsuccesful })
 

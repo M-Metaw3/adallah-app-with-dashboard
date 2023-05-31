@@ -8,9 +8,19 @@ const updateEmployee = 'http://localhost:10000/admin/update'
 const deleteEmp = 'http://localhost:10000/admin/delete'
 const susbendEmp = 'http://localhost:10000/admin/suspened'
 const deleteUser = 'http://localhost:10000/adala/user'
-const addPlacesApi ='http://localhost:10000/locations'
-const clock ='http://localhost:5000/admin/addworkhours'
-const getalllaweyers = 'http://localhost:10000/adala/lawyer'
+export const addPlacesApi ='http://localhost:10000/adala/locations'
+const clock ='http://localhost:10000/admin/addworkhours'
+const getalllaweyers = 'http://localhost:10000/admin/getlawyerdetails/1'
+const getAllLawyerNotVerified = 'http://localhost:10000/admin/getlawyerdetails/2'
+const getAllLawyerVerified = 'http://localhost:10000/admin/getlawyerdetails/3'
+const getAllLawyerSusbended = 'http://localhost:10000/admin/getlawyerdetails/4'
+const acceptLawyer = 'http://localhost:10000/admin/acceptedLawyer/accepted'
+const rejectLawyer = 'http://localhost:10000/admin/acceptedLawyer/rejected'
+const susbendLawyers = 'http://localhost:10000/admin/BlockedLawyer/s'
+const unSusbendLawyers = 'http://localhost:10000/admin/BlockedLawyer/unsus'
+
+const getCitizens = 'http://localhost:10000/adala/citizen'
+const getlocations="http://localhost:10000/adala/locations/2"
 
 
 
@@ -215,6 +225,45 @@ export const getAllLawyers = async()=>{
       
     }}
 
+    export const getNotVerifiedLawyer = async()=>{
+      try {  
+        return await fetch(getAllLawyerNotVerified,{
+          method:"get",
+          // headers: {
+          //   "Content-Type": " application/json",
+          //   Authorization: `Bearer ${token.token}`,
+          // },
+        })
+      } catch (error) {
+        
+      }}
+
+      export const getVerifiedLawyer = async()=>{
+        try {  
+          return await fetch(getAllLawyerVerified,{
+            method:"get",
+            // headers: {
+            //   "Content-Type": " application/json",
+            //   Authorization: `Bearer ${token.token}`,
+            // },
+          })
+        } catch (error) {
+          
+        }}
+
+        export const getSusbendedLawyer = async()=>{
+          try {  
+            return await fetch(getAllLawyerSusbended,{
+              method:"get",
+              // headers: {
+              //   "Content-Type": " application/json",
+              //   Authorization: `Bearer ${token.token}`,
+              // },
+            })
+          } catch (error) {
+            
+          }}
+
     export const deleteLawyer = async(id)=>{
       try {
         return await fetch(deleteUser+'/'+id,{
@@ -230,3 +279,94 @@ export const getAllLawyers = async()=>{
         
       }
     }
+    export const susbendeLawyer = async(id)=>{
+      try {
+        return await fetch(susbendLawyers+'/'+id,{
+          method:"PATCH",
+          headers: {
+            "Content-Type": " application/json",
+            // Authorization: `Bearer ${token.token}`,
+          },
+          // body:JSON.stringify(body)
+    
+        })
+      } catch (error) {
+        
+      }
+    }
+    export const unSusbendeLawyer = async(id)=>{
+      try {
+        return await fetch(unSusbendLawyers+'/'+id,{
+          method:"PATCH",
+          headers: {
+            "Content-Type": " application/json",
+            // Authorization: `Bearer ${token.token}`,
+          },
+          // body:JSON.stringify(body)
+    
+        })
+      } catch (error) {
+        
+      }
+    }
+    export const AcceptLawyer = async(id)=>{
+      try {
+        return await fetch(acceptLawyer+'/'+id,{
+          method:"PATCH",
+          headers: {
+            "Content-Type": " application/json",
+            // Authorization: `Bearer ${token.token}`,
+          },
+          // body:JSON.stringify(body)
+    
+        })
+      } catch (error) {
+        
+      }
+    }
+
+    export const RejectLawyer = async(id)=>{
+      try {
+        return await fetch(rejectLawyer+'/'+id,{
+          method:"PATCH",
+          headers: {
+            "Content-Type": " application/json",
+            // Authorization: `Bearer ${token.token}`,
+          },
+          // body:JSON.stringify(body)
+    
+        })
+      } catch (error) {
+        
+      }
+    }
+/////////////////// Citizen //////////////////
+    export const getCitizen = async()=>{
+
+      try {
+        
+        return fetch(getCitizens,{
+          method:"get",
+          headers: {
+            "Content-Type": " application/json",
+            Authorization: `Bearer ${token.token}`,
+          },
+        })
+      } catch (error) {   
+      }}
+
+    
+  /////////////// locations //////////////////
+  export const getLocation = async(serchkey)=>{
+
+    try {
+      
+      return fetch(getlocations+'/'+serchkey,{
+        method:"get",
+        headers: {
+          "Content-Type": " application/json",
+          Authorization: `Bearer ${token.token}`,
+        },
+      })
+    } catch (error) {   
+    }}

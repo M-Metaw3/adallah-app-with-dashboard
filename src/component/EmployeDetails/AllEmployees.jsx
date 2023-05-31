@@ -41,7 +41,7 @@ function AllEmployees() {
     }
     return (
         <>
-        <div className='px-4 '>
+        <div className=' py-4'>
             <span className=''>Total : {allemp?.length}</span>
         </div>
         
@@ -84,7 +84,7 @@ function AllEmployees() {
 
             
             {allemp ?
-                <div className='p-4'>
+                <div >
                     {allemp.map((el) => (
                         <div key={el.id} className="card position-static my-2">
 

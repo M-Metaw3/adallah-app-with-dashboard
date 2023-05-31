@@ -12,7 +12,7 @@ try {
     console.log("getAlllawersDetails")
 switch (info) {
     case "1":
-        const getAllLawyer = await lawyer.find({userType:"lawyers"}).populate('userData').limit(1).skip(1)
+        const getAllLawyer = await lawyer.find({userType:"lawyers"}).populate('userData')
         const getAllLawyerCount = await getAllLawyer.length
         console.log(getAllLawyerCount)
         res.status(201).json({message:"lawyer get details successfully", countofLawyer:getAllLawyerCount, data:getAllLawyer})
@@ -88,6 +88,7 @@ const unbolcked = await lawyer.findByIdAndUpdate(id,{susbended:false},{new:true}
 res.status(201).json({message:"lawyers  unsusbended ",data:unbolcked})
 
 
+break;
 
     default:
     res.status(400).json({message:"an error"})
@@ -120,7 +121,7 @@ static AcceptedLawyerinfo = async (req,res) => {
         switch (info) {
             case "accepted":
                
-        const acceptedinfo = await lawyer.findOneAndUpdate(id,{checked:true},{new:true})
+        const acceptedinfo = await lawyer.findByIdAndUpdate(id,{checked:true},{new:true})
         
         res.status(201).json({message:"lawyers  info accepted ",data:acceptedinfo})
         
@@ -132,6 +133,7 @@ static AcceptedLawyerinfo = async (req,res) => {
         const rejectedinfo = await lawyer.findByIdAndUpdate(id,{checked:false},{new:true})
         res.status(201).json({message:"lawyers  unsusbended ",data:rejectedinfo})
         
+        break;
         
         
             default:

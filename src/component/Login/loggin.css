@@ -9,8 +9,8 @@ height:100vh;
     background-color: rgba(255,255,255,30%) ;
 }
 .login_btn{
-    color: white;
-    background-color:var(--dark-blue);
+    color: white !important;
+    background-color:var(--dark-blue) !important;
     }
     
 .login_btn:hover{

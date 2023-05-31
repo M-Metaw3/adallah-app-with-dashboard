@@ -68,10 +68,10 @@ const handelerUbdatePasswords = () => {
         </NavLink>        
         <NavLink to="/Home/EmployeDetails/registration" className={`btn px-4 me-2`}>Add
         </NavLink>
-        </div>    
         <div>
-            <Outlet/>       
+          <Outlet/>       
         </div>
+        </div>    
         
       </>
     );

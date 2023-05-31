@@ -1,22 +1,21 @@
 /* eslint-disable import/no-anonymous-default-export */
+
 const intailstate = {
-    allLawyers: [],
+    allLocations: [],
 };
 
 export default (state = intailstate, action) => {
-  let newLawyers ;
     switch (action.type) {
-        case "allLawyers":
-            console.log("allLawyers")
+        case "allLocations":
+            console.log("allLocations")
       console.log(action.payload)
-     return { ...state, allLawyers: action.payload };
-     
-     case "DeleteLawyer":
+     return { ...state, allLocations: action.payload };
+     case "DeleteLocation":
       console.log(action.payload);
-       newLawyers = state.allLawyers.filter(
+      const newLocations = state.allLocations.filter(
         (el) => el._id != action.payload
       );
-      return { ...state, allLawyers: newLawyers };
+      return { ...state, allLocations: newLocations };
 
      case "error":
       return state;

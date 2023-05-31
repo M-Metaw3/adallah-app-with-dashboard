@@ -50,7 +50,7 @@ useEffect(() => {
                         <Outlet/>
                 </div>
                 <div className='w-auto'>
-                <div className='invisible'>
+                <div className='invisible border-start d-flex flex-column justify-content-center vh-100'>
                 <button className='btn  d-lg-none'
                 // onClick={()=>SetToggle(!toggle)}
                 >
@@ -58,7 +58,7 @@ useEffect(() => {
                         </button> 
                 <Navbar/>
                 </div>
-                <div className=' border-start position-fixed top-0 end-0 d-flex flex-column justify-content-center'>
+                <div className=' border-start position-fixed top-0 end-0 d-flex flex-column justify-content-center vh-100'>
                 <button className='btn shadow-none border-0  d-lg-none'
                  onClick={()=>SetToggle(!toggle)}
                  >

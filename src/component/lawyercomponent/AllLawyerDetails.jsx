@@ -20,11 +20,20 @@ const AllLawyerDetails = () => {
 const handelerDelete = (id) => {
     dispatch(dashboard.deleteLawyer(id))
 }
-const handelerSusbened = () => {
+const handelerSusbened = (id) => {
     console.log("handelerSusbened");
+    dispatch(dashboard.susbendLawyer(id))
 
 }
+const handelerUnSusbened = (id) => {
+    console.log("handelerUnSusbened");
+    dispatch(dashboard.unSusbendLawyer(id))
 
+}
+const handelerUpdate = () => {
+    console.log("handelerUpdate");
+
+}
     return (
         <>
         <div className='px-4 '>
@@ -50,8 +59,14 @@ const handelerSusbened = () => {
                 <span className='col-8 col-lg-2 border-end border-start text-center my-2 my-lg-0'>{el.nationality}</span>
                 
                 <div className='col-12 col-lg-4 d-flex justify-content-evenly'>
-                {/* <button onClick={() => handelerUpdate(el)} className='btn border-0 fs-5' >Update</button> */}
-                <button onClick={() =>handelerSusbened(el._id)} className='btn border-0 fs-5' >Susbend</button>
+                <button onClick={() => handelerUpdate(el)} className='btn border-0 fs-5' >Update</button>
+                {
+                el.sus?
+                    <button onClick={() =>handelerUnSusbened(el._id)} className='btn border-0 fs-5' >UnSusbend</button>
+                    :
+                    <button onClick={() =>handelerSusbened(el._id)} className='btn border-0 fs-5' >Susbend</button>
+                }
+
                 <button onClick={()=>handelerDelete(el._id)} className='btn border-0 fs-5'>Delete</button>
                 </div>
               </div>

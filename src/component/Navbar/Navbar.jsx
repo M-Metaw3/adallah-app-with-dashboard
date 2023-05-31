@@ -24,7 +24,7 @@ const Navbar = () => {
             {/* <p>{clock.getHours()}:{clock.getMinutes()}:{clock.getSeconds()}</p> */}
 
             {employeeInfo ?
-                <div className=' d-flex flex-column justify-content-between align-items-center  px-1 z-3 vh-100'>
+                <div className=' d-flex flex-column justify-content-between align-items-center   z-3 vh-100'>
                 <img src={employeeInfo.body.image} alt="" width={40} className=' rounded-circle my-3 mx-2' />
                     {/* <p>{employeeInfo.body.name}</p> */}
                 <div className='my-4'>
