@@ -38,10 +38,10 @@ const LawyerPending = () => {
             <img src={require('../../assets/images/logoo.png')} alt="img" className='mx-2 rounded-circle' width={70} height={70} />
               </div>
               <div className='col-9'>
-                <NavLink className={`btn p-0 m-0 border-0 `} to={`/Home/lowyerDetails/${el.name}`}>
+                <NavLink className={`btn p-0 m-0 border-0 `} to={`/Home/lowyerDetails/Lawyer/${el.id}`}>
                     <p>{el.name}</p>
                 </NavLink>
-              <p className='font-opacity-50'>{el.id}</p>
+              <p className='font-opacity-50'>{el.phone}</p>
             </div>
             </div>
 

@@ -51,7 +51,7 @@ function Routing() {
      <Route path="/Home/lowyerDetails/Lawyersusbended" element={<Lawyersusbended />} />
      <Route path="/Home/lowyerDetails/Lawyerdeleting" element={<Lawyerdeleting />} />
      </Route>
-     <Route path="/Home/lowyerDetails/Lawyer/id" element={<Lawyer />} />
+     <Route path="/Home/lowyerDetails/Lawyer/:id" element={<Lawyer />} />
 
 
      <Route path="/Home/erorr" element={<Error />} />

@@ -1,12 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 function Lawyer() {
-    const { Lawyer } = useParams();
-    console.log(Lawyer)
+    const { id } = useParams();
+    console.log(id)
+    const {allLawyers}= useSelector((state)=>state.Lawyer);
+  const Lawyer=allLawyers.find((Lawyer)=>Lawyer.id===id);
+  console.log(Lawyer)
     return (
     <>
-      {Lawyer}
+      {Lawyer?.id}
     </>
   )
 }
