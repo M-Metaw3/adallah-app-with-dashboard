@@ -16,7 +16,6 @@ switch (info) {
         const getAllLawyerCount = await getAllLawyer.length
         console.log(getAllLawyerCount)
         res.status(201).json({message:"lawyer get details successfully", countofLawyer:getAllLawyerCount, data:getAllLawyer})
-
         break;
 
         case "2":
@@ -34,7 +33,6 @@ switch (info) {
         
         const getAllLawyerVerified = await lawyer.find({userType:"lawyers",checked:true}).populate('userData')
         const getAllLawyerVerifiedCount = await getAllLawyerVerified.length
-
         res.status(201).json({message:"lawyers  verified ",count:getAllLawyerVerifiedCount ,data:getAllLawyerVerified})
 
     
@@ -114,7 +112,7 @@ static AcceptedLawyerinfo = async (req,res) => {
 
     const  {id} = req.params
     const  {info} =req.params
-
+console.log(id)
     try {
 
 
@@ -122,7 +120,11 @@ static AcceptedLawyerinfo = async (req,res) => {
             case "accepted":
                
         const acceptedinfo = await lawyer.findByIdAndUpdate(id,{checked:true},{new:true})
+<<<<<<< HEAD
         
+=======
+        console.log(acceptedinfo)
+>>>>>>> 7141e1c (zz)
         res.status(201).json({message:"lawyers  info accepted ",data:acceptedinfo})
         
                 break;
@@ -133,9 +135,12 @@ static AcceptedLawyerinfo = async (req,res) => {
         const rejectedinfo = await lawyer.findByIdAndUpdate(id,{checked:false},{new:true})
         res.status(201).json({message:"lawyers  unsusbended ",data:rejectedinfo})
         
+<<<<<<< HEAD
         break;
         
         
+=======
+>>>>>>> 7141e1c (zz)
             default:
             res.status(400).json({message:"an error"})
         

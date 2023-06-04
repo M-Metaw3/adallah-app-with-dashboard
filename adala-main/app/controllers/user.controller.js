@@ -185,15 +185,13 @@ class User {
     static deleteUser = async (req, res) => {
 
         const _id = req.params.id
-        // console.log(deletedUserId)
+        console.log("deletedUserId")
         try {
-            // const FindUser = await userModel.findById(_id)
-            // console.log(FindUser)
-            // const addUserDeleted = await new DeletedUsersModel(FindUser)
-            // await addUserDeleted.save()
+      
             const deletetedsuccesful = await userModel.findByIdAndDelete(_id)
+            const addUserDeleted = await new DeletedUsersModel(deletetedsuccesful)
+            await addUserDeleted.save()
             res.status(201).json({ message: "user has deleted", data: deletetedsuccesful })
-
 
         } catch (error) {
             res.status(400).json({ message: error.message })

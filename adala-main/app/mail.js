@@ -6,6 +6,10 @@ const transport=nodemailer.createTransport({
         pass:process.env.appMailPass
     }
 })
+
+
+
+
 module.exports.sendmail=(email,subject,html)=>{
   transport.sendMail({
     from: process.env.appMail,

@@ -26,7 +26,7 @@ const updatelocation = 'http://localhost:10000/adala/locations/update'
 const deletelocation = 'http://localhost:10000/adala/locations/delete'
 
 
-
+// sdddddddd
 
 ////////////////////////////////////////////////////////////////////////////////////
 
