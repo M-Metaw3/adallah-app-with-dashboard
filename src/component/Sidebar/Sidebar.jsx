@@ -9,7 +9,7 @@ function Sidebar() {
             <div className='p-3'>
                 <img src={require('../../assets/images/logoo.png')} width={"100%"} alt="" />            
             </div>
-            <div className='list-group mx-3 mt-4'>
+            <div className='list-group mx-3 my-4'>
                     <NavLink  className='py-2 my-1 px-5 rounded-3' to={'/'}>Dashboard</NavLink>
                     <NavLink  className='py-2 my-1 px-5 rounded-3' to={'/Home/Analysis'}>Analysis</NavLink>
                     <NavLink  className='py-2 my-1 px-5 rounded-3' to="/Home/lowyerDetails">Lawyer Details</NavLink>

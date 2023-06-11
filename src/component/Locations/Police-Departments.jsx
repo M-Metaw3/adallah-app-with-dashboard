@@ -1,10 +1,10 @@
 import React from 'react'
-import AllLocations from './AllLocations';
+import Location from './Location';
 function PoliceDepartments() {
 
   return (
     <>
-          <AllLocations category="اقسام"/>
+          <Location category="اقسام"/>
     </>
   )
 }

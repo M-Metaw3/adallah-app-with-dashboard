@@ -231,7 +231,7 @@ const getAllCitizen = () => async (dispatch) => {
 
 //////////// Locations ///////////////////////
 
-const getAllLocaions = (serchkey) => async (dispatch) => {
+const getLocaions = (serchkey) => async (dispatch) => {
   try {
     await api
       .getLocation(serchkey)
@@ -244,6 +244,18 @@ const getAllLocaions = (serchkey) => async (dispatch) => {
 };
 
 
+const getAllLocaions = () => async (dispatch) => {
+  try {
+    await api
+      .getAllLocation()
+      .then((el) =>
+        el.json().then((el) => dispatch({ type: "allLocations", payload: el.body }))
+       
+      );
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
 
 
@@ -262,6 +274,7 @@ export default {
   deleteLawyer,
   susbenedEmployee,
   getAllCitizen,
+  getLocaions,
   getAllLocaions,
   getSusbendedLawyers,
   getNotVerifiedLawyer,

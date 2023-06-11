@@ -21,6 +21,7 @@ const unSusbendLawyers = 'http://localhost:10000/admin/BlockedLawyer/unsus'
 
 const getCitizens = 'http://localhost:10000/adala/citizen'
 const getlocations="http://localhost:10000/adala/locations/2"
+const getAlllocations="http://localhost:10000/adala/locations/all"
 
 
 
@@ -370,3 +371,19 @@ export const getAllLawyers = async()=>{
       })
     } catch (error) {   
     }}
+
+
+
+    export const getAllLocation = async()=>{
+
+      try {
+        
+        return fetch(getAlllocations,{
+          method:"get",
+          headers: {
+            "Content-Type": " application/json",
+            Authorization: `Bearer ${token.token}`,
+          },
+        })
+      } catch (error) {   
+      }}

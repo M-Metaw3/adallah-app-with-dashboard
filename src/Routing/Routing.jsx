@@ -23,6 +23,12 @@ import Lawyersusbended from '../component/lawyercomponent/Lawyersusbended';
 import Courts from '../component/Locations/Courts';
 import PoliceDepartments from '../component/Locations/Police-Departments';
 import Lawyer from '../component/lawyercomponent/Lawyer';
+import Prosecutors from '../component/Locations/Prosecutors';
+import CommercialDocumentation from '../component/Locations/CommercialDocumentation';
+import CommercialRooms from '../component/Locations/CommercialRooms';
+import InvestmentCommissions from '../component/Locations/InvestmentCommissions';
+import NotaryOffice from '../component/Locations/NotaryOffice';
+import TaxAuthorities from '../component/Locations/TaxAuthorities';
 function Routing() {
     const users = JSON.parse(localStorage.getItem("token"))
 
@@ -65,6 +71,13 @@ function Routing() {
      <Route path="/Home/LocationsDetails/Addlocations" element={<Addlocations/>} />
      <Route path="/Home/LocationsDetails/Courts" element={< Courts/>} />
      <Route path="/Home/LocationsDetails/PoliceDepartments" element={< PoliceDepartments/>} />
+     <Route path="/Home/LocationsDetails/Prosecutors" element={< Prosecutors/>} />
+     <Route path="/Home/LocationsDetails/CommercialDocumentation" element={< CommercialDocumentation/>} />
+     <Route path="/Home/LocationsDetails/CommercialRooms" element={< CommercialRooms/>} />
+     <Route path="/Home/LocationsDetails/InvestmentCommissions" element={< InvestmentCommissions/>} />
+     <Route path="/Home/LocationsDetails/NotaryOffice" element={< NotaryOffice/>} />
+     <Route path="/Home/LocationsDetails/TaxAuthorities" element={< TaxAuthorities/>} />
+     <Route path="/Home/LocationsDetails/All" element={< AllLocations/>} />
      <Route path="/Home/LocationsDetails" element={< Courts/>} />
 
       </Route>

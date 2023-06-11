@@ -1,27 +1,79 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import SearchSection from '../Search-Section/SearchSection';
-
+import {ScrollMenu} from 'react-horizontal-scrolling-menu';
+import "./location.css"
 function LocationsDetails() {
-  return (
-    <>
-           <SearchSection title={"Locations"} setSearchValue={""}/>
-        <div className='p-4 employe-details'>
-        <NavLink  to="/Home/LocationsDetails/Courts" className={`btn px-4 me-2`}>Courts</NavLink>
-        <NavLink  to="/Home/LocationsDetails/PoliceDepartments" className={`btn px-4 me-2`}>Police Departments</NavLink>
-        <NavLink  to="/Home/LocationsDetails/Prosecutors" className={`btn px-4 me-2`}>Prosecutors</NavLink>
-        <NavLink  to="/Home/LocationsDetails/CommercialRooms" className={`btn px-4 me-2`}>Commercial Rooms</NavLink>
-        <NavLink  to="/Home/LocationsDetails/NotaryOffice" className={`btn px-4 me-2`}>Notary Office</NavLink>
-        <NavLink  to="/Home/LocationsDetails/CommercialDocumentation" className={`btn px-4 me-2`}>Commercial Documentation</NavLink>
-        <NavLink  to="/Home/LocationsDetails/InvestmentCommissions" className={`btn px-4 me-2`}>Investment Commissions</NavLink>
-        <NavLink  to="/Home/LocationsDetails/TaxAuthorities" className={`btn px-4 me-2`}>Tax Authorities</NavLink>
+  const scrl = useRef()
+  const slide = (shift) => {
+    scrl.current.scrollLeft += shift;
+    setscrollX(scrollX + shift); // Updates the latest scrolled postion
 
-        <NavLink  to="/Home/LocationsDetails/Addlocations" className={`btn px-4 me-2`}>Add</NavLink>
+    //For checking if the scroll has ended
+    if (
+      Math.floor(scrl.current.scrollWidth - scrl.current.scrollLeft) <=
+      scrl.current.offsetWidth
+    ) {
+      setscrolEnd(true);
+    } else {
+      setscrolEnd(false);
+    }
+  };
+
+  const [scrollX, setscrollX] = useState(0); // For detecting start scroll postion
+  const [scrolEnd, setscrolEnd] = useState(false); // For detecting end of scrolling
+  const list = [
+    // {title:"All",rout:"/Home/LocationsDetails/All"},
+    {title:"Courts",rout:"/Home/LocationsDetails/Courts"},
+    {title:"Police Departments",rout:"/Home/LocationsDetails/PoliceDepartments"},
+    {title:"Prosecutors",rout:"/Home/LocationsDetails/Prosecutors"},
+    {title:"Commercial Rooms",rout:"/Home/LocationsDetails/CommercialRooms"},
+    {title:"Notary Office",rout:"/Home/LocationsDetails/NotaryOffice"},
+    {title:"Commercial Documentation",rout:"/Home/LocationsDetails/CommercialDocumentation"},
+    {title:"Investment Commissions",rout:"/Home/LocationsDetails/InvestmentCommissions"},
+    {title:"Tax Authorities",rout:"/Home/LocationsDetails/TaxAuthorities"},
+    {title:"Add",rout:"/Home/LocationsDetails/Addlocations"},
+
+    
+    
+  ]
+  
+  return (
+    
+    <>
+        <SearchSection title={"Locations"} setSearchValue={""}/>
+        <div className='p-4 employe-details d-flex align-items-center '>
         
+        
+        <div className='align-items-center d justify-content-between list' ref={scrl}>
+          {
+           list.map((el)=>
+           (
+            <NavLink key={el.title} to={el.rout} className={`btn px-4 me-2`}>{el.title}</NavLink>
+
+           )) 
+          }
+        </div> 
+ 
+        {/* <button  >More <i className="fa-solid fa-angle-right"></i></button> */}
+        {!scrolEnd && (
+        <button className={`btn px-4 me-2`} onClick={() => slide(+1000)}>
+          <i className="fa fa-angle-right"></i>More
+        </button>
+      )}    
+
+{scrollX !== 0 && (
+        <button className={`btn px-4 me-2`} onClick={() => slide(-500)}>
+          <i className="fa fa-angle-left"></i>Less
+        </button>
+      )}
+              </div>
+    
         <div>
-          <Outlet/>       
+        <Outlet/>       
         </div>
-        </div>    
+      
+          
         
       </>
   )

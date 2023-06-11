@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import postaction from '../../action/postaction';
-import AllLocations from './AllLocations';
+import React from 'react'
+import Location from './Location';
 
 function Courts() {
 
   return (
     <>
-        <AllLocations category="محاكم"/>
+        <Location category="محاكم"/>
     </>
   )
 }

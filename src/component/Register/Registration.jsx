@@ -8,12 +8,12 @@ import moment from "moment"
 
 
  import posts from "../../action/postaction"
+import Clocks from '../Clocks';
 
 const Registration = () => {
     
-
     const users = JSON.parse(localStorage.getItem("token"))
-    const [registration, setregistration] = useState({name:'', email:'',password:'',con_password:'',image:'',position:''});
+    const [registration, setregistration] = useState({name:'', email:'',password:'',con_password:'',image:'',position:'',startallowedLoginHour:'',endallowedLoginHour:''});
     const dispatch = useDispatch()
     const [eror, seteror] = useState("");
     const nav = useNavigate();
@@ -22,7 +22,7 @@ const Registration = () => {
 // console.log( moment(Date).fromNow());
 const reg =(e) => {
 
-    if(registration.password!=registration.con_password)return seteror("password dosn,t matching")
+    if(registration.password!=registration.con_password)return seteror("password dosn't matching")
 
 console.log(registration);
     dispatch(posts.registeremp(
@@ -38,16 +38,11 @@ console.log(registration);
 
 
 
-
 )
 
-    // nav('/')
-    
-
+    // nav('/')    
     // nav('/registration')
-
-  
-// setregistration({name:'', email:'',password:'',con_password:'',image:'',postion:''})
+setregistration({name:'', email:'',password:'',con_password:'',image:'',position:'',startallowedLoginHour:'',endallowedLoginHour:''})
 
   
 }
@@ -116,6 +111,13 @@ value={registration.image}
                             </select>
                         </div>
                         <div className="mb-3 col-10 col-lg-7">
+                            <input className="form-control" value={registration.startallowedLoginHour}  onChange={(e)=>setregistration({...registration,startallowedLoginHour:e.target.value})} type="number" name="startallowedLoginHour" id="startallowedLoginHour" placeholder='Start Hour' />
+                        </div>
+
+                        <div className="mb-3 col-10 col-lg-7">
+                            <input className="form-control" value={registration.endallowedLoginHour}  onChange={(e)=>setregistration({...registration,endallowedLoginHour:e.target.value})} type="number" name="endallowedLoginHour" id="endallowedLoginHour" placeholder='End Hour' />
+                        </div>
+                        <div className="mb-3 col-10 col-lg-7">
                         <div className='form-control'>
                         <FileBase
                         type="file"
@@ -135,7 +137,6 @@ value={registration.image}
                     </div>
                 </form>
              </div>
-
         </>
 
     );

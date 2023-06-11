@@ -46,7 +46,7 @@ useEffect(() => {
                 </div> */}
 
                 </div>
-                <div className='col content'>
+                <div className='col content overflow-hidden'>
                         <Outlet/>
                 </div>
                 <div className='w-auto'>

@@ -60,7 +60,7 @@ const Addlocations = () => {
                             <option value="اشهر عقارية">اشهر عقارية</option>
                             <option value="سجلات تجارية">سجلات تجارية</option>
                             <option value="هيئات استثمار">هيئات استثمار</option>
-                            <option value="مأموريات ضرائب">مأموريات ضرائب   </option>
+                            <option value="مأموريات ضرائب">مأموريات ضرائب</option>
                         </select>
                     </div>
                     <div className="mb-3 col-10 col-lg-7">
