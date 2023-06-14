@@ -17,6 +17,7 @@ function Sidebar() {
                     <NavLink  className='py-2 my-1 px-5 rounded-3' to="/Home/EmployeDetails">Employee Details</NavLink>
                     <NavLink  className='py-2 my-1 px-5 rounded-3' to={'/Home/AddAdvertising'}>Advertisements</NavLink>
                     <NavLink  className='py-2 my-1 px-5 rounded-3' to={'/Home/Library'}>Library</NavLink>
+                    <NavLink  className='py-2 my-1 px-5 rounded-3' to={'/Home/Syndicates'}>Syndicates</NavLink>
                     <NavLink  className='py-2 my-1 px-5 rounded-3' to={'/Home/LocationsDetails'}>Locations</NavLink>
             </div>
        </div>

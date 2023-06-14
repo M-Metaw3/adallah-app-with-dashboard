@@ -45,7 +45,7 @@ function LocationsDetails() {
         <div className='p-4 employe-details d-flex align-items-center '>
         
         
-        <div className='align-items-center d justify-content-between list' ref={scrl}>
+        <div className='align-items-center d-flex justify-content-between list' ref={scrl}>
           {
            list.map((el)=>
            (
@@ -57,13 +57,13 @@ function LocationsDetails() {
  
         {/* <button  >More <i className="fa-solid fa-angle-right"></i></button> */}
         {!scrolEnd && (
-        <button className={`btn px-4 me-2`} onClick={() => slide(+1000)}>
+        <button className={`btn px-4 me-2`} onClick={() => slide(200)}>
           <i className="fa fa-angle-right"></i>More
         </button>
       )}    
 
-{scrollX !== 0 && (
-        <button className={`btn px-4 me-2`} onClick={() => slide(-500)}>
+{scrollX !== 0 &&scrolEnd && (
+        <button className={`btn px-4 me-2`} onClick={() => slide(-200)}>
           <i className="fa fa-angle-left"></i>Less
         </button>
       )}

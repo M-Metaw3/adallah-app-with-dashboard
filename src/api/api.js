@@ -22,6 +22,8 @@ const unSusbendLawyers = 'http://localhost:10000/admin/BlockedLawyer/unsus'
 const getCitizens = 'http://localhost:10000/adala/citizen'
 const getlocations="http://localhost:10000/adala/locations/2"
 const getAlllocations="http://localhost:10000/adala/locations/all"
+const updatelocation = 'http://localhost:10000/adala/locations/update'
+const deletelocation = 'http://localhost:10000/adala/locations/delete'
 
 
 
@@ -387,3 +389,39 @@ export const getAllLawyers = async()=>{
         })
       } catch (error) {   
       }}
+
+      export const updateLocation = async(id,body)=>{
+
+        try {
+          
+          return await fetch(updatelocation+'/'+id,{
+            method:"PATCH",
+            headers: {
+              "Content-Type": " application/json",
+              Authorization: `Bearer ${token.token}`,
+            },
+            body:JSON.stringify(body)
+      
+          })
+        } catch (error) {
+         
+        }
+      }
+
+      export const deleteLocation = async(id)=>{
+        try {
+          console.log(id)
+          
+          return await fetch(deletelocation+'/'+id,{
+            method:"DELETE",
+            headers: {
+              "Content-Type": " application/json",
+              // Authorization: `Bearer ${token.token}`,
+            },
+            // body:JSON.stringify(body)
+      
+          })
+        } catch (error) {
+          
+        }
+      }

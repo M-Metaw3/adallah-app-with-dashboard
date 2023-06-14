@@ -29,6 +29,7 @@ import CommercialRooms from '../component/Locations/CommercialRooms';
 import InvestmentCommissions from '../component/Locations/InvestmentCommissions';
 import NotaryOffice from '../component/Locations/NotaryOffice';
 import TaxAuthorities from '../component/Locations/TaxAuthorities';
+import Governorates from '../component/Governorates/Governorates';
 function Routing() {
     const users = JSON.parse(localStorage.getItem("token"))
 
@@ -40,6 +41,7 @@ function Routing() {
      {users? <Route path="/Home" element={<Home />} >
 
      <Route path="/Home/Library" element={<Library />} />
+     <Route path="/Home/Syndicates" element={<Governorates />} />
 
      <Route path="/Home/registration" element={<Registration />} />
      <Route path="/Home/AddAdvertising" element={<AddAdvertising />} />

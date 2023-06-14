@@ -256,7 +256,28 @@ const getAllLocaions = () => async (dispatch) => {
     console.log(error.message);
   }
 };
+const updateLocation = (id, body) => async (dispatch) => {
+  console.log(body,"bbbbbbbb")
+  try {
+    await api.updateLocation(id, body).then((el) => {
+      el.json().then((ell) => {
+        // dispatch({ type: "updateLocation", payload: ell });
+        console.log(ell)
+      });
+    });
+  } catch (error) {}
+};
 
+const deleteLocation = (id) => async (dispatch) => {
+  try {
+    await api
+      .deleteLocation(id)
+      .then((el) => el.json().then((el) => console.log(el)));
+    dispatch({ type: "deleteLocation", payload: id });
+  } catch (error) {
+    console.log("err");
+  }
+};
 
 
 
@@ -281,5 +302,7 @@ export default {
   acceptLawyer,
   rejectLawyer,
   susbendLawyer,
-  unSusbendLawyer
+  unSusbendLawyer,
+  updateLocation,
+  deleteLocation
 };

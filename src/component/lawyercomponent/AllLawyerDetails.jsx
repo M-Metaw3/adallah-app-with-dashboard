@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import postaction from '../../action/postaction';
 import { useDispatch, useSelector } from 'react-redux';
 import dashboard from '../../action/postaction'
+import { NavLink } from 'react-router-dom';
 
 const AllLawyerDetails = () => {
   const dispatch = useDispatch();
@@ -51,7 +52,9 @@ const handelerUpdate = () => {
                 <img src={require('../../assets/images/logoo.png')} alt="img" className='mx-2 rounded-circle' width={70} height={70} />
                   </div>
                   <div className='col-9'>
-                  <p>{el.name}</p>
+                    <NavLink to={`/Home/lowyerDetails/Lawyer/${el.id}`} className={`btn border-0 p-0`}>
+                        <p>{el.name}</p>
+                    </NavLink>
                   <p className='font-opacity-50'>{el.phone}</p>
                 </div>
                 </div>

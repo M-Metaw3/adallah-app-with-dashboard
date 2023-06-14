@@ -25,3 +25,10 @@
   .font-opacity-50{
     color: rgba(var(--dark-blue-rgb), 50%);
   }
+  .btn-delete,  .btn-delete:hover{
+    background-color: rgba(var(--orange-rgb),25%);
+    color: rgb(var(--dark-blue-rgb));
+    border: none;
+  }
+
+ 

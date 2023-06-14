@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import postaction from '../../action/postaction';
 import { useDispatch, useSelector } from 'react-redux';
+import UpdateLocation from './UpdateLocation';
+import dashboard from '../../action/postaction'
 
 function Location(props) {
   const dispatch = useDispatch()
@@ -8,6 +10,17 @@ function Location(props) {
   useEffect(() => {
       dispatch(postaction.getLocaions(props.category))
   }, [dispatch]);
+
+  const [show, setShow] = useState(false); 
+  const [updateLocation, setUpdateLocation] = useState({ id: '', category: '', name: '',locations:{coordinates:[]}, details: '' })   
+  const modalShow = (el) => {
+    setShow(true);
+    setUpdateLocation({  id: el.id,category: el.category, name: el.name, locations:{coordinates:el.locations.coordinates} , details: el.details })
+  }
+  const handelerDelete = (id) => {
+    dispatch(dashboard.deleteLocation(id))
+}
+
   return (
     <>
     <div className='p-4 '>
@@ -32,13 +45,18 @@ function Location(props) {
 
             <span className='col-8 col-lg-2 border-end border-start text-center my-2 my-lg-0'>{el.category}</span>
             <div className='col-12 col-lg-4 d-flex justify-content-evenly'>
-            {/* <button onClick={() => handelerUpdate(el)} className='btn border-0 fs-5' >Update</button> */}
-            {/* <button onClick={() =>handelerAccepted(el._id)} className='btn border-0 fs-5' >Accept</button> */}
+            <button  onClick={() => modalShow(el)} className='btn border-0 fs-5' >Update</button>
+            <button onClick={()=>handelerDelete(el._id)} className='btn border-0 fs-5'>Delete</button>
             {/* <button onClick={()=>handelerRejected(el._id)} className='btn border-0 fs-5'>Reject</button> */}
             </div>
           </div>
           </div>
           ))}</div>: <h1>loading .....</h1>}
+
+  <div>
+        <UpdateLocation show={show} setShow={setShow} updateLocation={updateLocation} setUpdateLocation={setUpdateLocation}/>
+  </div>
+          
     </>
   )
 }

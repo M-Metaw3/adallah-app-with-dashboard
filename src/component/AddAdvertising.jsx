@@ -67,3 +67,6 @@ console.log(registration.image);
 }
 
 export default AddAdvertising;
+
+
+

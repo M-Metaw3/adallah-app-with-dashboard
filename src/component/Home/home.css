@@ -16,12 +16,6 @@
 
 }
 
-.container{
-border:1px solid red;
-    display: flex;
-    background-color: #f5f5fb;
-
-}
 .show {
     display: block
 }
