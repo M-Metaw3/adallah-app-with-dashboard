@@ -1,4 +1,4 @@
-# i worked on back end and the dashboard in this application
+# i worked on backend and the dashboard in this application
 #FLUTTER NODE JS REACT JS 
 #######################
 ![signup 3](https://github.com/M-Metaw3/adallah-app-with-dashboard/assets/107302134/08bbcb8f-1b11-415a-8762-e1ac550bd16d)
