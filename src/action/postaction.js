@@ -10,7 +10,7 @@ const loginAction = (body) => async (dispatch) => {
         const { body } = data;
         const { message } = data;
 
-        console.log(body);
+       
         if (body) {
           dispatch({ type: "loggin", payload: data });
         } else {
